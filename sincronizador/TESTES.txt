@@ -1,0 +1,340 @@
+TAP version 13
+# Subtest: conferência não grava e ignora cadastro sem ficha
+ok 1 - conferência não grava e ignora cadastro sem ficha
+  ---
+  duration_ms: 31.858016
+  type: 'test'
+  ...
+# Subtest: sincronização lê total, grava e verifica persistência
+ok 2 - sincronização lê total, grava e verifica persistência
+  ---
+  duration_ms: 7.788433
+  type: 'test'
+  ...
+# Subtest: não depende de nome de empresa para iniciar
+ok 3 - não depende de nome de empresa para iniciar
+  ---
+  duration_ms: 7.865104
+  type: 'test'
+  ...
+# Subtest: falha na gravação não é registrada como atualização confirmada
+ok 4 - falha na gravação não é registrada como atualização confirmada
+  ---
+  duration_ms: 7.113588
+  type: 'test'
+  ...
+# Subtest: não altera cadastro se a ficha recalculada não persistir
+ok 5 - não altera cadastro se a ficha recalculada não persistir
+  ---
+  duration_ms: 9.324669
+  type: 'test'
+  ...
+# Subtest: ativar automático injeta monitor sem exigir empresa
+ok 6 - ativar automático injeta monitor sem exigir empresa
+  ---
+  duration_ms: 2.216864
+  type: 'test'
+  ...
+# Subtest: entrada detectada cria pendência e não grava antes da aprovação
+ok 7 - entrada detectada cria pendência e não grava antes da aprovação
+  ---
+  duration_ms: 2040.394155
+  type: 'test'
+  ...
+# Subtest: evento automático não precisa conter empresa
+ok 8 - evento automático não precisa conter empresa
+  ---
+  duration_ms: 2014.707003
+  type: 'test'
+  ...
+# Subtest: recusar por enquanto mantém a pendência e o aviso
+ok 9 - recusar por enquanto mantém a pendência e o aviso
+  ---
+  duration_ms: 2.251468
+  type: 'test'
+  ...
+# Subtest: conferência lista divergência mesmo quando ficha está abaixo do custo fixo e o recálculo os iguala
+ok 10 - conferência lista divergência mesmo quando ficha está abaixo do custo fixo e o recálculo os iguala
+  ---
+  duration_ms: 7.47769
+  type: 'test'
+  ...
+# Subtest: custo fixo desativado é listado na conferência e ativado na sincronização
+ok 11 - custo fixo desativado é listado na conferência e ativado na sincronização
+  ---
+  duration_ms: 12.617552
+  type: 'test'
+  ...
+# Subtest: queda de ficha positiva para zero é marcada como bloqueio de segurança na conferência
+ok 12 - queda de ficha positiva para zero é marcada como bloqueio de segurança na conferência
+  ---
+  duration_ms: 6.32987
+  type: 'test'
+  ...
+# Subtest: estratégia ficha atual copia o total já exibido sem recalcular componentes
+ok 13 - estratégia ficha atual copia o total já exibido sem recalcular componentes
+  ---
+  duration_ms: 6.40537
+  type: 'test'
+  ...
+# Subtest: aprovação pendente oferece estratégia de usar ficha atual
+ok 14 - aprovação pendente oferece estratégia de usar ficha atual
+  ---
+  duration_ms: 7.243887
+  type: 'test'
+  ...
+# Subtest: falha de leitura torna conferência incompleta em vez de sucesso sem diferenças
+ok 15 - falha de leitura torna conferência incompleta em vez de sucesso sem diferenças
+  ---
+  duration_ms: 7.127456
+  type: 'test'
+  ...
+# Subtest: resposta sem fixed explícito não é aceita como custo ativo
+ok 16 - resposta sem fixed explícito não é aceita como custo ativo
+  ---
+  duration_ms: 6.124832
+  type: 'test'
+  ...
+# Subtest: Não continua listado como obrigatório mesmo se recálculo falhar
+ok 17 - Não continua listado como obrigatório mesmo se recálculo falhar
+  ---
+  duration_ms: 6.408821
+  type: 'test'
+  ...
+# Subtest: ficha zero com custo fixo Não também exige ativação
+ok 18 - ficha zero com custo fixo Não também exige ativação
+  ---
+  duration_ms: 6.547272
+  type: 'test'
+  ...
+# Subtest: usar valor atual cria vínculo e conferência seguinte não relista enquanto valores permanecerem iguais
+ok 19 - usar valor atual cria vínculo e conferência seguinte não relista enquanto valores permanecerem iguais
+  ---
+  duration_ms: 17.344671
+  type: 'test'
+  ...
+# Subtest: mudança de valor invalida vínculo e produto volta para a conferência
+ok 20 - mudança de valor invalida vínculo e produto volta para a conferência
+  ---
+  duration_ms: 7.163352
+  type: 'test'
+  ...
+# Subtest: nova entrada invalida vínculo confirmado dos produtos afetados
+ok 21 - nova entrada invalida vínculo confirmado dos produtos afetados
+  ---
+  duration_ms: 2002.351882
+  type: 'test'
+  ...
+# Subtest: estratégia por produto executa ficha atual sem recalcular o item
+ok 22 - estratégia por produto executa ficha atual sem recalcular o item
+  ---
+  duration_ms: 6.7984
+  type: 'test'
+  ...
+# Subtest: estratégia por produto permite recalcular item não bloqueado
+ok 23 - estratégia por produto permite recalcular item não bloqueado
+  ---
+  duration_ms: 6.270313
+  type: 'test'
+  ...
+# Subtest: recálculo bloqueado impede apenas a escolha inválida daquele produto
+ok 24 - recálculo bloqueado impede apenas a escolha inválida daquele produto
+  ---
+  duration_ms: 7.374044
+  type: 'test'
+  ...
+# Subtest: mensagem real de leitura preserva fixed:false sem campo Valor do custo e sem espera
+ok 25 - mensagem real de leitura preserva fixed:false sem campo Valor do custo e sem espera
+  ---
+  duration_ms: 11.809742
+  type: 'test'
+  ...
+# Subtest: mensagem real confirma Sim e valor em centavos
+ok 26 - mensagem real confirma Sim e valor em centavos
+  ---
+  duration_ms: 2.394732
+  type: 'test'
+  ...
+# Subtest: Não explícito tem prioridade mesmo com campo de custo remanescente
+ok 27 - Não explícito tem prioridade mesmo com campo de custo remanescente
+  ---
+  duration_ms: 4.131101
+  type: 'test'
+  ...
+# Subtest: campo sem input próprio não captura input de grupo vizinho
+ok 28 - campo sem input próprio não captura input de grupo vizinho
+  ---
+  duration_ms: 2.140235
+  type: 'test'
+  ...
+# Subtest: seletor desconhecido falha com prazo de 8 segundos em vez de afirmar Sim
+ok 29 - seletor desconhecido falha com prazo de 8 segundos em vez de afirmar Sim
+  ---
+  duration_ms: 4.564535
+  type: 'test'
+  ...
+# Subtest: Parar interrompe esperas
+ok 30 - Parar interrompe esperas
+  ---
+  duration_ms: 3.269194
+  type: 'test'
+  ...
+# Subtest: seletor nativo seleciona pelo texto mesmo com valor interno numérico
+ok 31 - seletor nativo seleciona pelo texto mesmo com valor interno numérico
+  ---
+  duration_ms: 2.385792
+  type: 'test'
+  ...
+# Subtest: seleção reconsulta controle recriado e restringe opções ao popup associado
+ok 32 - seleção reconsulta controle recriado e restringe opções ao popup associado
+  ---
+  duration_ms: 2.963006
+  type: 'test'
+  ...
+# Subtest: reabre Estoque se o carregamento descartar o primeiro clique
+ok 33 - reabre Estoque se o carregamento descartar o primeiro clique
+  ---
+  duration_ms: 2.891671
+  type: 'test'
+  ...
+# Subtest: não aceita seletor quando a aba Estoque nunca ativa
+ok 34 - não aceita seletor quando a aba Estoque nunca ativa
+  ---
+  duration_ms: 5.755106
+  type: 'test'
+  ...
+# Subtest: estrutura PrimeVue real sem for usa combobox interno e não o wrapper
+ok 35 - estrutura PrimeVue real sem for usa combobox interno e não o wrapper
+  ---
+  duration_ms: 3.465512
+  type: 'test'
+  ...
+# Subtest: seleção clica no texto interno do item customizado do CPlug
+ok 36 - seleção clica no texto interno do item customizado do CPlug
+  ---
+  duration_ms: 2.994908
+  type: 'test'
+  ...
+# Subtest: se clique interno não altera, tenta o item externo com sequência completa
+ok 37 - se clique interno não altera, tenta o item externo com sequência completa
+  ---
+  duration_ms: 5.248536
+  type: 'test'
+  ...
+# Subtest: aparecimento de Valor do custo confirma ativação mesmo com texto do seletor atrasado
+ok 38 - aparecimento de Valor do custo confirma ativação mesmo com texto do seletor atrasado
+  ---
+  duration_ms: 3.41962
+  type: 'test'
+  ...
+# Subtest: somente conclusão bem-sucedida da nota inicia evento
+ok 39 - somente conclusão bem-sucedida da nota inicia evento
+  ---
+  duration_ms: 3.313965
+  type: 'test'
+  ...
+# Subtest: movimentação reúne códigos válidos sem duplicar
+ok 40 - movimentação reúne códigos válidos sem duplicar
+  ---
+  duration_ms: 0.664955
+  type: 'test'
+  ...
+# Subtest: localiza múltiplos pais e fichas encadeadas sem entrar em ciclo
+ok 41 - localiza múltiplos pais e fichas encadeadas sem entrar em ciclo
+  ---
+  duration_ms: 0.511324
+  type: 'test'
+  ...
+# Subtest: fetch preserva resposta e detecta conclusão sem depender de empresa
+ok 42 - fetch preserva resposta e detecta conclusão sem depender de empresa
+  ---
+  duration_ms: 104.755866
+  type: 'test'
+  ...
+# Subtest: XHR 204 detecta importação, salvamento de produto não cria entrada
+ok 43 - XHR 204 detecta importação, salvamento de produto não cria entrada
+  ---
+  duration_ms: 1.886357
+  type: 'test'
+  ...
+# Subtest: lista mantém apenas identificação e vínculo necessário
+ok 44 - lista mantém apenas identificação e vínculo necessário
+  ---
+  duration_ms: 31.743257
+  type: 'test'
+  ...
+# Subtest: resetSnapshot limpa produtos capturados antes de varrer a aba Produção
+ok 45 - resetSnapshot limpa produtos capturados antes de varrer a aba Produção
+  ---
+  duration_ms: 63.453587
+  type: 'test'
+  ...
+# Subtest: fecha o link Pular do tour de boas-vindas
+ok 46 - fecha o link Pular do tour de boas-vindas
+  ---
+  duration_ms: 1.430714
+  type: 'test'
+  ...
+# Subtest: trata tour que aparece depois da primeira tentativa
+ok 47 - trata tour que aparece depois da primeira tentativa
+  ---
+  duration_ms: 0.282015
+  type: 'test'
+  ...
+# Subtest: não fecha outros diálogos ou controle desabilitado
+ok 48 - não fecha outros diálogos ou controle desabilitado
+  ---
+  duration_ms: 0.491981
+  type: 'test'
+  ...
+# Subtest: seleção distingue nome exato e evita clicar em ancestrais duplicados
+ok 49 - seleção distingue nome exato e evita clicar em ancestrais duplicados
+  ---
+  duration_ms: 1.10508
+  type: 'test'
+  ...
+# Subtest: recálculo usa menu visível e não o primeiro menu oculto
+ok 50 - recálculo usa menu visível e não o primeiro menu oculto
+  ---
+  duration_ms: 0.651049
+  type: 'test'
+  ...
+# Subtest: localiza a caixa de busca rápida da lista de produtos
+ok 51 - localiza a caixa de busca rápida da lista de produtos
+  ---
+  duration_ms: 6.867462
+  type: 'test'
+  ...
+# Subtest: localiza a aba Produção e reconhece quando está ativa
+ok 52 - localiza a aba Produção e reconhece quando está ativa
+  ---
+  duration_ms: 1.069419
+  type: 'test'
+  ...
+# Subtest: não inventa aba Produção quando ela não existe
+ok 53 - não inventa aba Produção quando ela não existe
+  ---
+  duration_ms: 0.193382
+  type: 'test'
+  ...
+# Subtest: fecha tour pelo X sem role button e sem texto Pular
+ok 54 - fecha tour pelo X sem role button e sem texto Pular
+  ---
+  duration_ms: 0.545393
+  type: 'test'
+  ...
+# Subtest: alvo de opção rejeita textos internos duplicados
+ok 55 - alvo de opção rejeita textos internos duplicados
+  ---
+  duration_ms: 1.085968
+  type: 'test'
+  ...
+1..55
+# tests 55
+# suites 0
+# pass 55
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6411.618112

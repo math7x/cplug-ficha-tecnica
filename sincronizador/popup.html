@@ -1,0 +1,42 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>Custos CPlug</title>
+<style>
+body{font:14px system-ui;width:400px;padding:18px;margin:0;background:#191b20;color:#eee}
+h1{font-size:20px;margin:0 0 8px}h3{font-size:15px;margin:0 0 8px}p{line-height:1.45}
+button{width:100%;padding:10px;margin-top:7px;border:0;border-radius:6px;cursor:pointer}button:disabled{opacity:.5;cursor:default}
+#syncSelected,#approvePending{background:#00a4dd;color:#fff}#approveCurrent{background:#2f855a;color:#fff}#deferPending{background:#4b4f59;color:#fff}#retryPending{background:#d97706;color:#fff}
+#allCurrent,#allRecalculate{background:#343943;color:#fff}
+label{display:block;margin:16px 0}#status{color:#6dd1f3}#error{color:#ffa9a9}.tag{color:#aadbb9}
+.box{margin:12px 0;padding:12px;background:#22252b;border:1px solid #343943;border-radius:8px}
+#pendingBox{display:none;border-color:#d97706}.pending-title{color:#ffd08a}.pending-warning{font-size:12px;color:#ffd08a;margin:8px 0}
+#previewBox{display:none}.count{margin:0 0 8px}.item{padding:11px 0;border-top:1px solid #343943}.item:first-child{border-top:0}.values{font-size:12px;margin-top:5px;line-height:1.55}.item-note{margin-top:5px;color:#ffd08a}.note{font-size:12px;color:#aadbb9;margin:8px 0 0}
+.strategy-choice{display:flex;gap:7px;margin-top:9px}.strategy-choice button{width:auto;flex:1;margin:0;padding:8px 6px;background:#343943;color:#fff;font-size:12px}.strategy-choice button.selected{background:#2f855a;box-shadow:inset 0 0 0 2px rgba(255,255,255,.22)}.strategy-choice button:disabled{background:#4b4f59;color:#bbb}
+.quick-actions{display:flex;gap:7px}.quick-actions button{flex:1;font-size:12px}
+</style>
+<h1>Custos das fichas técnicas</h1><p class="tag">Modo base única</p>
+<p>Na conferência, você pode escolher a estratégia <strong>produto por produto</strong>. Um recálculo bloqueado em um item não impede sincronizar os demais.</p>
+<p>As abas de trabalho aparecem em primeiro plano durante a execução. Aguarde a conclusão para continuar usando o CPlug.</p>
+
+<div id="pendingBox" class="box">
+  <h3 class="pending-title">⚠ Entrada aguardando confirmação</h3>
+  <p id="pendingMessage" class="count"></p>
+  <div id="pendingItems"></div>
+  <p id="pendingWarning" class="pending-warning"></p>
+  <button id="approveCurrent">Usar valor atual das fichas</button>
+  <button id="approvePending">Atualizar cadeia, recalcular e sincronizar</button>
+  <button id="retryPending">Conferir novamente</button>
+  <button id="deferPending">Recusar por enquanto — manter pendente</button>
+</div>
+
+<div id="previewBox" class="box">
+  <h3>Alterações encontradas</h3><p id="previewCount" class="count"></p><div id="previewItems"></div>
+  <p class="note"><strong>Escolha por produto:</strong> cada item tem os botões <strong>Usar ficha atual</strong> e <strong>Recalcular</strong>. Quando o recálculo daquele item estiver bloqueado por segurança, somente ele fica limitado à ficha atual.</p>
+</div>
+
+<button id="preview">Conferir diferenças</button>
+<div class="quick-actions"><button id="allCurrent">Todos: ficha atual</button><button id="allRecalculate">Recalcular onde permitido</button></div>
+<button id="syncSelected">Sincronizar escolhas</button>
+<label><input id="automatic" type="checkbox"> Monitorar entradas e exigir aprovação antes de recalcular/sincronizar</label>
+<p id="monitor"></p><p id="mode"></p><p id="status"></p><p id="error"></p>
+<button id="stop">Parar e desativar automático</button>
+<p>A extensão usa a base já aberta no CPlug e não tenta identificar nome de empresa. Na detecção automática, nenhum recálculo é executado antes da sua aprovação.</p>
+<script src="popup.js"></script></html>

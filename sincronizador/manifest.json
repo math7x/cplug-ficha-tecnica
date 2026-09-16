@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "CPlug — Sincronizar custos",
+  "version": "0.6.18",
+  "description": "Permite escolher por produto entre usar a ficha atual ou recalcular, sem deixar um item bloqueado travar os demais.",
+  "permissions": [
+    "storage",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://app.connectplug.com.br/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://app.connectplug.com.br/*"
+      ],
+      "js": [
+        "core.js",
+        "page.js"
+      ],
+      "world": "MAIN",
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://app.connectplug.com.br/*"
+      ],
+      "js": [
+        "ui.js",
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Custos das fichas técnicas"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "CPlug — Diagnóstico de custos",
+  "version": "0.2.0",
+  "description": "Mapeia a estrutura das operações de fichas técnicas e estoque, sem alterar cadastros.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {"matches": ["https://app.connectplug.com.br/*"], "js": ["observer.js"], "run_at": "document_start", "world": "MAIN"},
+    {"matches": ["https://app.connectplug.com.br/*"], "js": ["bridge.js"], "run_at": "document_start"}
+  ],
+  "background": {"service_worker": "background.js"},
+  "action": {"default_popup": "popup.html"}
+}

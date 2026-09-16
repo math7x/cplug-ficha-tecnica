@@ -1,0 +1,7 @@
+CPlug — Sincronizar custos v0.6.18
+
+NOVIDADE: escolha a estratégia por produto após a conferência.
+Um produto bloqueado para recálculo não trava os demais.
+Use os botões dentro de cada item e finalize em “Sincronizar escolhas”.
+
+Antes de instalar, desative a versão anterior e recarregue o CPlug.
