@@ -2,6 +2,14 @@
 
 Conjunto de extensões para diagnosticar e sincronizar custos de fichas técnicas no ConnectPlug. O projeto separa o fluxo de análise do processo de atualização, facilitando a conferência antes de qualquer alteração.
 
+## Problema que resolve
+
+Atualizar custos de fichas técnicas em lote exige cuidado: um recálculo incorreto pode afetar vários produtos, enquanto um único item bloqueado pode interromper toda a rotina. Conferir essas diferenças manualmente torna o processo lento e dificulta identificar onde ocorreu a inconsistência.
+
+## Solução desenvolvida
+
+O projeto separa diagnóstico, conferência e sincronização. Ele identifica diferenças, permite decidir produto por produto entre manter o custo atual ou recalcular e continua processando os demais itens quando encontra uma falha isolada. Com isso, a manutenção de custos fica mais segura, rastreável e menos dependente de tarefas repetitivas.
+
 ## Componentes
 
 - `diagnostico`: identifica inconsistências e ajuda a validar os dados exibidos pelo sistema;
