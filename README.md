@@ -31,3 +31,7 @@ sincronizador/  extensão principal e testes
 4. Selecione `sincronizador` para o uso principal ou `diagnostico` para o utilitário de inspeção.
 
 Tecnologias principais: JavaScript, HTML, CSS e Chrome Extensions API.
+
+## Autoria
+
+Desenvolvido por [math7x](https://github.com/math7x).
