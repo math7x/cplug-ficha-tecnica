@@ -1,0 +1,3 @@
+﻿Extensões - sincronizar custos das fichas técnicas no ConnectPlug
+
+Contém a extensão sincronizador, que recalcula custos de fichas técnicas e atualiza o custo do produto no ConnectPlug, e a extensão diagnostico para mapear operações sem alterar cadastros. Leia README.md antes de instalar.
